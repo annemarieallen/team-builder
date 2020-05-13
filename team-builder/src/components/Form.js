@@ -9,7 +9,7 @@ const Form = (props) => {
   });
 
   const clearForm = () => {
-    setFormData({ id: Date.now(), name: '', email: '', role: '' });
+    setFormData({ id: Date.now(), name: "", email: "", role: "" });
   };
 
   const handleSubmit = (event) => {
@@ -22,7 +22,6 @@ const Form = (props) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
-
   return (
     <form onSubmit={handleSubmit}>
       {/*NAME*/}
@@ -33,7 +32,9 @@ const Form = (props) => {
         type="text"
         placeholder="enter name"
         value={formData.name}
-        onChange={handleChange}
+        onChange={(event) => {
+          setFormData({ ...formData, name: event.target.value });
+        }}
       />
       {/*EMAIL*/}
       <label htmlFor="email"> email: </label>

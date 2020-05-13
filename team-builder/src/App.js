@@ -9,12 +9,12 @@ import './App.css';
 function App() {
 
   //Setup state
-  const [teamMembers, setTeamMembers] = useState ({
+  const [teamMembers, setTeamMembers] = useState ([{
     id: 1,
     name: 'Annemarie',
     email: 'annemarie@email.com',
     role: 'student',
-  });
+  }]);
 
   const handleSubmit = (member) => {
     setTeamMembers([...teamMembers, member]);
@@ -24,7 +24,7 @@ function App() {
     <div className="App">
       <h1>Member Submission</h1>
       <Form onSubmit = {handleSubmit}/>
-      
+      <Members teamMembers={teamMembers}/>
     </div>
   );
 }
